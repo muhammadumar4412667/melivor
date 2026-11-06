@@ -1,0 +1,16 @@
+services:
+  melivor:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      HOST: 0.0.0.0
+      PORT: 3000
+      NODE_ENV: production
+    volumes:
+      - melivor_data:/app/data
+      - melivor_uploads:/app/public/uploads
+    restart: unless-stopped
+volumes:
+  melivor_data:
+  melivor_uploads:
